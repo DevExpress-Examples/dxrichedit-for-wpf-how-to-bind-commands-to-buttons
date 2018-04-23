@@ -1,0 +1,20 @@
+﻿<Window x:Class="RichEditBindCommandsToStandardControlsWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxre="http://schemas.devexpress.com/winfx/2008/xaml/richedit"
+        xmlns:local="clr-namespace:RichEditBindCommandsToStandardControlsWpf"
+        Title="MainWindow" Height="350" Width="525">
+    
+    <Grid>
+        <dxre:RichEditControl Margin="0,0,0,20" Name="reEditor" Text="reEditor"  />
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal">
+            <Button Command="{x:Static dxre:RichEditUICommand.FileNew}" CommandParameter="{Binding ElementName=reEditor}" Content="New" />
+            <Button Command="{x:Static dxre:RichEditUICommand.EditCopy}" CommandParameter="{Binding ElementName=reEditor}" Content="Copy" />
+            <Button Command="{x:Static dxre:RichEditUICommand.EditPaste}" CommandParameter="{Binding ElementName=reEditor}" Content="Paste" />
+            <Button Command="{x:Static dxre:RichEditUICommand.FormatFontBold}" CommandParameter="{Binding ElementName=reEditor}" Content="Bold Font" />
+            <Button Command="{x:Static local:CustomRichEditUICommand.MyCommand}" CommandParameter="{Binding ElementName=reEditor}" Content="Custom Command" />
+        </StackPanel>
+        
+    </Grid>
+</Window>
