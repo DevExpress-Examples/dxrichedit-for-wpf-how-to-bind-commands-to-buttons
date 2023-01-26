@@ -6,7 +6,7 @@
         Title="MainWindow" Height="350" Width="525">
     
     <Grid>
-        <dxre:RichEditControl Margin="0,0,0,20" Name="reEditor" Text="reEditor" />
+        <dxre:RichEditControl Margin="0,0,0,20" Name="reEditor" Text="reEditor"  />
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal">
             <Button Command="{x:Static dxre:RichEditUICommand.FileNew}" CommandParameter="{Binding ElementName=reEditor}" Content="New" />
